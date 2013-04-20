@@ -1,0 +1,61 @@
+submit 
+test process snode=SERVER01MW2
+STEP01 COPY 
+from (file=\\SERVER01MW4\UKBank\COPY\*.0 
+snode 
+sysopts="datatype(text)" 
+) 
+to (file=\\SERVER01MW4\UKBank\ 
+pnode 
+sysopts="datatype(text)" 
+) 
+STEP02 COPY 
+from (file=\\SERVER01MW4\UKBank\COPY\*.0 
+snode 
+sysopts="datatype(text)" 
+) 
+to (file=\\SERVER01MW4\UKBank\BOTH\ 
+pnode 
+sysopts="datatype(text)" 
+) 
+STEP03 COPY 
+from (file=\\SERVER01MW4\UKBank\COPY\*.0 
+snode 
+sysopts="datatype(text)" 
+) 
+to (file=\\SERVER01MW4\UKBank\CLIENT\ 
+pnode 
+sysopts="datatype(text)" 
+) 
+pend; 
+submit 
+test process snode=SERVER01MW2 
+STEP01 COPY 
+from (file=\\SERVER0AY7\UKBank\COPY\*.0 
+snode 
+sysopts="datatype(text)" 
+) 
+to (file=\\SERVER0AY7\UKBank\ 
+pnode 
+sysopts="datatype(text)" 
+) 
+STEP02 COPY 
+from (file=\\SERVER0AY7\UKBank\COPY\*.0 
+snode 
+sysopts="datatype(text)" 
+) 
+to (file=\\SERVER0AY7\UKBank\BOTH\ 
+pnode 
+sysopts="datatype(text)" 
+) 
+STEP03 COPY 
+from (file=\\SERVER0AY7\UKBank\COPY\*.0 
+snode 
+sysopts="datatype(text)" 
+) 
+to (file=\\SERVER0AY7\UKBank\CLIENT\ 
+pnode 
+sysopts="datatype(text)" 
+) 
+pend; 
+quit;
