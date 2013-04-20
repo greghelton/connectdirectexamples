@@ -1,16 +1,16 @@
 submit 
-test process snode=VMAKSA69901MST 
+test process snode=SERVER01MSX 
 STEP01 COPY 
-from (file=\\VMAKSA69901MSP\UKBank\*.0 
+from (file=\\SERVER01MSP\UKBank\*.0 
 snode 
 sysopts="datatype(text)" 
 ) 
-to (file=D:\USBank\* 
+to (file=D:\UKBank\* 
 pnode 
 sysopts="datatype(text)" 
 ) 
 IF (STEP01 EQ 0) THEN 
-RUN TASK sysopts="cmd(del \\VMAKSA69901MSP\UKBank\*.0)" 
+RUN TASK sysopts="cmd(del \\SERVER01MSP\UKBank\*.0)" 
 EIF 
 pend; 
 quit;
